@@ -61,7 +61,7 @@ function MobileNav() {
                     />
                     <h1 className='font-semibold text-2xl'>FLOW</h1>
                   </Link>
-                  <Button className='border-2 border-white p-5 rounded-full hover:bg-[#BFF265] hover:text-black cursor-pointer'>
+                  <Button className='bg-transparent p-5 rounded-full hover:bg-[#BFF265] hover:text-black cursor-pointer'>
                     Get in touch
                   </Button>
                 </div>

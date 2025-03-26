@@ -53,13 +53,13 @@ const Header = () => {
             <div className='block md:hidden'>
               <MobileNav />
             </div>
-            <Button className='border-2 border-white p-5 rounded-full hover:bg-[#BFF265] hover:text-black cursor-pointer'>
+            <Button className='border border-white p-5 bg-transparent rounded-full hover:bg-[#BFF265] hover:text-black cursor-pointer'>
               Get in touch
             </Button>
           </div>
         </div>
       </header>
-      <hr className='text-[#BFF265]' />
+      <hr className='hidden md:border md:border-[#BFF265]' />
     </>
   )
 }
