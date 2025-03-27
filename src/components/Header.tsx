@@ -59,7 +59,9 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <hr className='hidden md:border md:border-[#BFF265]' />
+      <div className='hidden md:block'>
+        <hr className='border border-[#BFF265]' />
+      </div>
     </>
   )
 }
