@@ -74,6 +74,28 @@ export type Slug = {
   source?: string;
 };
 
+export type Results = {
+  _id: string;
+  _type: "results";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  image?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  title?: string;
+  subtitle?: string;
+  description?: string;
+};
+
 export type AboutUs = {
   _id: string;
   _type: "aboutUs";
@@ -177,7 +199,7 @@ export type Hero = {
   heroButton?: string;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Slug | AboutUs | Solutions | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Hero;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Slug | Results | AboutUs | Solutions | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Hero;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/helpers/queries.ts
 // Variable: HERO_QUERY
@@ -229,6 +251,29 @@ export type ABOUT_QUERYResult = Array<{
   option3?: string;
   option4?: string;
 }>;
+// Variable: RESULTS_QUERY
+// Query: *[_type == "results"] | order(name asc)
+export type RESULTS_QUERYResult = Array<{
+  _id: string;
+  _type: "results";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  image?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  title?: string;
+  subtitle?: string;
+  description?: string;
+}>;
 
 // Query TypeMap
 import "@sanity/client";
@@ -237,5 +282,6 @@ declare module "@sanity/client" {
     "*[_type == \"hero\"] | order(name asc)": HERO_QUERYResult;
     "*[_type == \"solutions\"] | order(name asc)": SOLUTIONS_QUERYResult;
     "*[_type == \"aboutUs\"] | order(name asc)": ABOUT_QUERYResult;
+    "*[_type == \"results\"] | order(name asc)": RESULTS_QUERYResult;
   }
 }

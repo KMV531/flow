@@ -9,3 +9,7 @@ export const SOLUTIONS_QUERY = defineQuery(
 export const ABOUT_QUERY = defineQuery(
   `*[_type == "aboutUs"] | order(name asc)`
 )
+
+export const RESULTS_QUERY = defineQuery(
+  `*[_type == "results"] | order(name asc)`
+)
