@@ -28,7 +28,7 @@ export const heroTypes = defineType({
   preview: {
     select: {
       title: 'title',
-      heroDescription: 'heroDescription',
+      subtitle: 'heroDescription',
     },
   },
 })

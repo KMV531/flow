@@ -1,5 +1,5 @@
 import { sanityFetch } from '../lib/live'
-import { HERO_QUERY, SOLUTIONS_QUERY } from './queries'
+import { ABOUT_QUERY, HERO_QUERY, SOLUTIONS_QUERY } from './queries'
 
 export const getHero = async () => {
   try {
@@ -21,6 +21,18 @@ export const getSolutions = async () => {
     return solutionsData?.data || []
   } catch (error) {
     console.log('Error fetching Solutions data (index.ts):', error)
+    return []
+  }
+}
+
+export const getAbout = async () => {
+  try {
+    const aboutData = await sanityFetch({
+      query: ABOUT_QUERY,
+    })
+    return aboutData?.data || []
+  } catch (error) {
+    console.log('Error fetching About data (index.ts):', error)
     return []
   }
 }

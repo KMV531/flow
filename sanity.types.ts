@@ -74,6 +74,20 @@ export type Slug = {
   source?: string;
 };
 
+export type AboutUs = {
+  _id: string;
+  _type: "aboutUs";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  description?: string;
+  option1?: string;
+  option2?: string;
+  option3?: string;
+  option4?: string;
+};
+
 export type Solutions = {
   _id: string;
   _type: "solutions";
@@ -163,7 +177,7 @@ export type Hero = {
   heroButton?: string;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Slug | Solutions | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Hero;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Slug | AboutUs | Solutions | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Hero;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/helpers/queries.ts
 // Variable: HERO_QUERY
@@ -200,6 +214,21 @@ export type SOLUTIONS_QUERYResult = Array<{
   title?: string;
   description?: string;
 }>;
+// Variable: ABOUT_QUERY
+// Query: *[_type == "aboutUs"] | order(name asc)
+export type ABOUT_QUERYResult = Array<{
+  _id: string;
+  _type: "aboutUs";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  description?: string;
+  option1?: string;
+  option2?: string;
+  option3?: string;
+  option4?: string;
+}>;
 
 // Query TypeMap
 import "@sanity/client";
@@ -207,5 +236,6 @@ declare module "@sanity/client" {
   interface SanityQueries {
     "*[_type == \"hero\"] | order(name asc)": HERO_QUERYResult;
     "*[_type == \"solutions\"] | order(name asc)": SOLUTIONS_QUERYResult;
+    "*[_type == \"aboutUs\"] | order(name asc)": ABOUT_QUERYResult;
   }
 }
