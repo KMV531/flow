@@ -3,11 +3,13 @@ import AboutSection from '@/sections/HomePage/AboutSection'
 import HeroImage from '@/sections/HomePage/HeroImage'
 import HeroSection from '@/sections/HomePage/HeroSection'
 import SolutionsSection from '@/sections/HomePage/SolutionsSection'
+import ResultSection from '../../sections/HomePage/ResultSection'
 
 export default async function Home() {
   const hero = await getHero()
   const solutions = await getSolutions()
   const aboutUs = await getAbout()
+
   return (
     <div>
       <HeroSection hero={hero} />
@@ -16,6 +18,7 @@ export default async function Home() {
         <SolutionsSection solutions={solutions} />
       </div>
       <AboutSection aboutUs={aboutUs} />
+      <ResultSection />
     </div>
   )
 }

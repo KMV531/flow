@@ -2,6 +2,7 @@ import React from 'react'
 
 interface SectionTitleProps {
   name: string
+  className?: string
 }
 
 const SectionTitle = ({ name }: SectionTitleProps) => {
