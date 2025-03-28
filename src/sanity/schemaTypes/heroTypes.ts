@@ -9,17 +9,20 @@ export const heroTypes = defineType({
       name: 'title',
       title: 'Hero Title',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'heroDescription',
       title: 'Hero Description',
       type: 'text',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'heroButton',
       title: 'Hero Button',
       type: 'text',
       description: 'Call to action button',
+      validation: (Rule) => Rule.required(),
     }),
   ],
   preview: {
