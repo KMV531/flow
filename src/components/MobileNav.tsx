@@ -1,60 +1,6 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetDescription,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from '@/components/ui/sheet'
-
-const SHEET_SIDES = ['top', 'right', 'bottom', 'left'] as const
-
-type MobileNav = (typeof SHEET_SIDES)[number]
-
-function MobileNav() {
-  return (
-    <div className='grid grid-cols-2 gap-2'>
-      {SHEET_SIDES.map((side) => (
-        <Sheet key={side}>
-          <SheetTrigger asChild>
-            <Button variant='outline'>{side}</Button>
-          </SheetTrigger>
-          <SheetContent side={side}>
-            <SheetHeader>
-              <SheetTitle>Edit profile</SheetTitle>
-              <SheetDescription>
-                Make changes to your profile here. Click save when you&apos;re
-                done.
-              </SheetDescription>
-            </SheetHeader>
-            <div className='grid gap-4 py-4'>
-              <div className='grid grid-cols-4 items-center gap-4'>Name</div>
-              <div className='grid grid-cols-4 items-center gap-4'>
-                Username
-              </div>
-            </div>
-            <SheetFooter>
-              <SheetClose asChild>
-                <Button type='submit'>Save changes</Button>
-              </SheetClose>
-            </SheetFooter>
-          </SheetContent>
-        </Sheet>
-      ))}
-    </div>
-  )
-}
-
-export default MobileNav
-/*
-'use client'
-
-import { Button } from '@/components/ui/button'
 
 import {
   Sheet,
@@ -69,6 +15,8 @@ import {
 import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 
 const NavLinks = [
   {
@@ -94,10 +42,22 @@ const SHEET_SIDES = ['top'] as const
 type MobileNav = (typeof SHEET_SIDES)[number]
 
 function MobileNav() {
+  const router = useRouter()
+  const [isOpen, setIsOpen] = useState(false)
+
+  const handleNavigation = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault()
+    setIsOpen(false)
+    router.push(href)
+  }
+
   return (
     <div>
       {SHEET_SIDES.map((side) => (
-        <Sheet key={side}>
+        <Sheet key={side} open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
             <Menu className='cursor-pointer' />
           </SheetTrigger>
@@ -113,19 +73,24 @@ function MobileNav() {
                       height={25}
                       className='object-cover'
                     />
-                    <h1 className='font-semibold text-2xl'>FLOW</h1>
+                    <h1 className='font-semibold text-2xl text-white'>FLOW</h1>
                   </Link>
-                  <Button className='bg-transparent p-5 rounded-full hover:bg-[#BFF265] hover:text-black cursor-pointer'>
+                  <Button className='border border-white p-5 bg-transparent rounded-full hover:bg-[#BFF265] hover:text-black cursor-pointer'>
                     Get in touch
                   </Button>
                 </div>
               </SheetTitle>
               <SheetDescription></SheetDescription>
             </SheetHeader>
-            <div className='flex flex-col justify-center items-center gap-10 pt-10 '>
+            <div className='flex flex-col justify-center items-center gap-10 pt-20 '>
               {NavLinks.map((NavLink, index) => {
                 return (
-                  <Link href={NavLink.href} key={index} className='gap-x-10'>
+                  <Link
+                    href={NavLink.href}
+                    key={index}
+                    className='gap-x-10'
+                    onClick={(e) => handleNavigation(e, NavLink.href)}
+                  >
                     {NavLink.title}
                   </Link>
                 )
@@ -133,7 +98,7 @@ function MobileNav() {
             </div>
             <SheetFooter>
               <SheetClose asChild>
-                <Button className='absolute top-9 right-[10rem] cursor-pointer'>
+                <Button className='absolute top-9 right-[10rem] cursor-pointer bg-transparent hover:bg-transparent'>
                   <X className='size-7' />
                 </Button>
               </SheetClose>
@@ -146,4 +111,3 @@ function MobileNav() {
 }
 
 export default MobileNav
-*/

@@ -6,7 +6,9 @@ import { ImageCarousel } from '@/components/ImageCarousel'
 const AboutSection = ({ aboutUs }: { aboutUs: ABOUT_QUERYResult }) => {
   return (
     <section className='container mx-auto px-10 md:px-0 mb-32'>
-      <SectionTitle name='About Us' />
+      <div className='gap-y-5 flex flex-col justify-between'>
+        <SectionTitle name='About Us' />
+      </div>
       <div className='mt-5 flex flex-col lg:flex-row lg:items-center lg:justify-center lg:gap-x-10'>
         <div>
           {aboutUs?.map((about) => (

@@ -12,7 +12,7 @@ const SectionTitle = ({ name }: SectionTitleProps) => {
         <div className='w-3 h-3 bg-[#BFF265] rounded-full'></div>
         <p>{name}</p>
       </div>
-      <div className='container mx-auto my-7'>
+      <div className='container mx-auto mb-7'>
         <hr className='bg-black' />
       </div>
     </>

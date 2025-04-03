@@ -11,7 +11,7 @@ const SolutionsSection = ({
   solutions: SOLUTIONS_QUERYResult
 }) => {
   return (
-    <section className=' bg-white border rounded-lg my-36 text-black'>
+    <section className='bg-white border rounded-lg my-32 text-black'>
       <div className='container mx-auto pb-36 px-10 md:px-0'>
         <div className='flex flex-col justify-between gap-y-5'>
           <SectionTitle name='Solutions' />

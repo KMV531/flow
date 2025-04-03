@@ -4,16 +4,16 @@ import Image from 'next/image'
 
 const ResultSection = () => {
   return (
-    <section className='bg-white py-10'>
-      <div className='container mx-auto px-10 lg:px-0'>
-        <div className='text-black'>
-          <SectionTitle name='Results' />
+    <section>
+      <div className='container mx-auto mb-28 px-10 lg:px-0'>
+        <div className='text-black gap-y-5 flex flex-col justify-between'>
+          <SectionTitle name='Our results' />
         </div>
 
-        <h1 className='text-5xl text-black font-semibold my-8 pb-10'>
+        <h1 className='text-5xl text-black font-semibold my-8 pb-10 flex items-center justify-center'>
           We are committed to a sustainable future
         </h1>
-        <div className='flex flex-col items-start justify-start md:flex-row gap-x-10 gap-7 mt-10'>
+        <div className='flex flex-col items-start justify-start lg:items-center lg:justify-center md:flex-row gap-x-10 gap-7 mt-10'>
           <div className='flex flex-col gap-y-7 p-7 bg-[#BFF265] rounded-lg'>
             <Image
               src={'/results_image_1.PNG'}
