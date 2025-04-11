@@ -68,19 +68,16 @@ export type Geopoint = {
   alt?: number;
 };
 
-export type Slug = {
-  _type: "slug";
-  current?: string;
-  source?: string;
-};
-
-export type Results = {
+export type Blogs = {
   _id: string;
-  _type: "results";
+  _type: "blogs";
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  image?: {
+  title?: string;
+  overview?: string;
+  slug?: Slug;
+  mainImage?: {
     asset?: {
       _ref: string;
       _type: "reference";
@@ -91,9 +88,42 @@ export type Results = {
     crop?: SanityImageCrop;
     _type: "image";
   };
-  title?: string;
-  subtitle?: string;
-  description?: string;
+  content?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+    _key: string;
+  }>;
+};
+
+export type Slug = {
+  _type: "slug";
+  current?: string;
+  source?: string;
 };
 
 export type AboutUs = {
@@ -199,7 +229,7 @@ export type Hero = {
   heroButton?: string;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Slug | Results | AboutUs | Solutions | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Hero;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Blogs | Slug | AboutUs | Solutions | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Hero;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/helpers/queries.ts
 // Variable: HERO_QUERY
@@ -251,15 +281,18 @@ export type ABOUT_QUERYResult = Array<{
   option3?: string;
   option4?: string;
 }>;
-// Variable: RESULTS_QUERY
-// Query: *[_type == "results"] | order(name asc)
-export type RESULTS_QUERYResult = Array<{
+// Variable: BLOG_QUERY
+// Query: *[_type == "blogs"] | order(_createdAt desc)
+export type BLOG_QUERYResult = Array<{
   _id: string;
-  _type: "results";
+  _type: "blogs";
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  image?: {
+  title?: string;
+  overview?: string;
+  slug?: Slug;
+  mainImage?: {
     asset?: {
       _ref: string;
       _type: "reference";
@@ -270,9 +303,36 @@ export type RESULTS_QUERYResult = Array<{
     crop?: SanityImageCrop;
     _type: "image";
   };
-  title?: string;
-  subtitle?: string;
-  description?: string;
+  content?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+    _key: string;
+  }>;
 }>;
 
 // Query TypeMap
@@ -282,6 +342,6 @@ declare module "@sanity/client" {
     "*[_type == \"hero\"] | order(name asc)": HERO_QUERYResult;
     "*[_type == \"solutions\"] | order(name asc)": SOLUTIONS_QUERYResult;
     "*[_type == \"aboutUs\"] | order(name asc)": ABOUT_QUERYResult;
-    "*[_type == \"results\"] | order(name asc)": RESULTS_QUERYResult;
+    "*[_type == \"blogs\"] | order(_createdAt desc)": BLOG_QUERYResult;
   }
 }
