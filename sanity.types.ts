@@ -68,6 +68,59 @@ export type Geopoint = {
   alt?: number;
 };
 
+export type Team = {
+  _id: string;
+  _type: "team";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  name?: string;
+  position?: string;
+  mainImage?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+};
+
+export type Philosophy = {
+  _id: string;
+  _type: "philosophy";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  badge?: string;
+  title?: string;
+  philosophyDescription?: string;
+};
+
+export type About = {
+  _id: string;
+  _type: "about";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  aboutDescription?: string;
+  mainImage?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+};
+
 export type Blogs = {
   _id: string;
   _type: "blogs";
@@ -229,7 +282,7 @@ export type Hero = {
   heroButton?: string;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Blogs | Slug | AboutUs | Solutions | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Hero;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Team | Philosophy | About | Blogs | Slug | AboutUs | Solutions | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Hero;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/helpers/queries.ts
 // Variable: HERO_QUERY
@@ -334,6 +387,62 @@ export type BLOG_QUERYResult = Array<{
     _key: string;
   }>;
 }>;
+// Variable: ABOUT_PAGE_QUERY
+// Query: *[_type == "about"] | order(name asc)
+export type ABOUT_PAGE_QUERYResult = Array<{
+  _id: string;
+  _type: "about";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  aboutDescription?: string;
+  mainImage?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+}>;
+// Variable: PHILOSOPHY_QUERY
+// Query: *[_type == "philosophy"] | order(name asc)
+export type PHILOSOPHY_QUERYResult = Array<{
+  _id: string;
+  _type: "philosophy";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  badge?: string;
+  title?: string;
+  philosophyDescription?: string;
+}>;
+// Variable: TEAM_QUERY
+// Query: *[_type == "team"] | order(_createdAt desc)
+export type TEAM_QUERYResult = Array<{
+  _id: string;
+  _type: "team";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  name?: string;
+  position?: string;
+  mainImage?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+}>;
 
 // Query TypeMap
 import "@sanity/client";
@@ -343,5 +452,8 @@ declare module "@sanity/client" {
     "*[_type == \"solutions\"] | order(name asc)": SOLUTIONS_QUERYResult;
     "*[_type == \"aboutUs\"] | order(name asc)": ABOUT_QUERYResult;
     "*[_type == \"blogs\"] | order(_createdAt desc)": BLOG_QUERYResult;
+    "*[_type == \"about\"] | order(name asc)": ABOUT_PAGE_QUERYResult;
+    "*[_type == \"philosophy\"] | order(name asc)": PHILOSOPHY_QUERYResult;
+    "*[_type == \"team\"] | order(_createdAt desc)": TEAM_QUERYResult;
   }
 }

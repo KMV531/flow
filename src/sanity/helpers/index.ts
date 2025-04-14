@@ -1,5 +1,13 @@
 import { sanityFetch } from '../lib/live'
-import { ABOUT_QUERY, BLOG_QUERY, HERO_QUERY, SOLUTIONS_QUERY } from './queries'
+import {
+  ABOUT_PAGE_QUERY,
+  ABOUT_QUERY,
+  BLOG_QUERY,
+  HERO_QUERY,
+  PHILOSOPHY_QUERY,
+  SOLUTIONS_QUERY,
+  TEAM_QUERY,
+} from './queries'
 
 export const getHero = async () => {
   try {
@@ -45,6 +53,42 @@ export const getBlogs = async () => {
     return blogData?.data || []
   } catch (error) {
     console.log('Error fetching Blogs data (index.ts):', error)
+    return []
+  }
+}
+
+export const getAboutPage = async () => {
+  try {
+    const AboutPageData = await sanityFetch({
+      query: ABOUT_PAGE_QUERY,
+    })
+    return AboutPageData?.data || []
+  } catch (error) {
+    console.log('Error fetching About Page data (index.ts):', error)
+    return []
+  }
+}
+
+export const getPhilosophy = async () => {
+  try {
+    const philosophyData = await sanityFetch({
+      query: PHILOSOPHY_QUERY,
+    })
+    return philosophyData?.data || []
+  } catch (error) {
+    console.log('Error fetching Philosophy data (index.ts):', error)
+    return []
+  }
+}
+
+export const getTeam = async () => {
+  try {
+    const teamData = await sanityFetch({
+      query: TEAM_QUERY,
+    })
+    return teamData?.data || []
+  } catch (error) {
+    console.log('Error fetching Team data (index.ts):', error)
     return []
   }
 }

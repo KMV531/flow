@@ -26,7 +26,7 @@ const Footer = () => {
               <Link href={'/'} className='mt-2'>
                 Solutions
               </Link>
-              <Link href={'/about'}>How it works</Link>
+              <Link href={'/about-us'}>How it works</Link>
               <Link href={'/pricing'}>Pricing</Link>
             </div>
             <div className='flex flex-col space-y-8'>
@@ -42,7 +42,7 @@ const Footer = () => {
               <Link href={'/'} className='mt-2'>
                 Solutions
               </Link>
-              <Link href={'/about'}>How it works</Link>
+              <Link href={'/about-us'}>How it works</Link>
               <Link href={'/pricing'}>Pricing</Link>
             </div>
             <div className='flex flex-col space-y-4'>

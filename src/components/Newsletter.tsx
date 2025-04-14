@@ -2,7 +2,7 @@ import React from 'react'
 
 const Newsletter = () => {
   return (
-    <section className='bg-[#BEF264] rounded-lg mb-32'>
+    <section className='bg-[#BEF264] rounded-lg'>
       <div className='container mx-auto flex flex-col md:flex-row md:justify-between items-center p-10 gap-y-3'>
         <div>
           <h1 className='text-3xl md:text-4xl text-black'>

@@ -7,7 +7,7 @@ import Author from '@/components/Author'
 
 const BlogSection = ({ blogs }: { blogs: BLOG_QUERYResult }) => {
   return (
-    <section className='container mx-auto mt-20 px-5 mb-[10rem] lg:px-0'>
+    <section className='container mx-auto mt-44 px-5 mb-[10rem] lg:px-0'>
       <div className='flex items-center justify-between mb-20'>
         <h1 className='text-4xl font-semibold'>Blog</h1>
         <Link
