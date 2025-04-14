@@ -15,13 +15,15 @@ const Team = ({ team }: { team: TEAM_QUERYResult }) => {
         <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
           {team?.map((worker) => (
             <div key={worker?._id} className='relative'>
-              <Image
-                src={urlFor(worker?.mainImage).url()}
-                alt="worker's profile image"
-                width={700}
-                height={700}
-                className='object-cover rounded-xl'
-              />
+              {worker?.mainImage && (
+                <Image
+                  src={urlFor(worker?.mainImage).url()}
+                  alt="worker's profile image"
+                  width={700}
+                  height={700}
+                  className='object-cover rounded-xl'
+                />
+              )}
               <div className='px-4'>
                 <div className='bg-[#BFF265] p-3 flex items-center justify-between absolute bottom-4 w-3/4 rounded-xl'>
                   <h1 className='text-xl font-bold'>{worker?.name}</h1>
