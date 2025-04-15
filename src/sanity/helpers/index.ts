@@ -5,6 +5,8 @@ import {
   BLOG_QUERY,
   HERO_QUERY,
   PHILOSOPHY_QUERY,
+  PRODUCTDESIGN_QUERY,
+  RD_QUERY,
   SOLUTIONS_QUERY,
   TEAM_QUERY,
 } from './queries'
@@ -89,6 +91,30 @@ export const getTeam = async () => {
     return teamData?.data || []
   } catch (error) {
     console.log('Error fetching Team data (index.ts):', error)
+    return []
+  }
+}
+
+export const getRD = async () => {
+  try {
+    const RDData = await sanityFetch({
+      query: RD_QUERY,
+    })
+    return RDData?.data || []
+  } catch (error) {
+    console.log('Error fetching RD data (index.ts):', error)
+    return []
+  }
+}
+
+export const getProductDesign = async () => {
+  try {
+    const ProductDesignData = await sanityFetch({
+      query: PRODUCTDESIGN_QUERY,
+    })
+    return ProductDesignData?.data || []
+  } catch (error) {
+    console.log('Error fetching Product Design data (index.ts):', error)
     return []
   }
 }

@@ -25,3 +25,9 @@ export const PHILOSOPHY_QUERY = defineQuery(
 export const TEAM_QUERY = defineQuery(
   `*[_type == "team"] | order(_createdAt desc)`
 )
+
+export const RD_QUERY = defineQuery(`*[_type == "RD"] | order(_createdAt desc)`)
+
+export const PRODUCTDESIGN_QUERY = defineQuery(
+  `*[_type == "productDesign"] | order(_createdAt desc)`
+)

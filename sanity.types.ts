@@ -68,6 +68,28 @@ export type Geopoint = {
   alt?: number;
 };
 
+export type ProductDesign = {
+  _id: string;
+  _type: "productDesign";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  location?: string;
+  hour?: string;
+};
+
+export type RD = {
+  _id: string;
+  _type: "RD";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  location?: string;
+  hour?: string;
+};
+
 export type Team = {
   _id: string;
   _type: "team";
@@ -282,7 +304,7 @@ export type Hero = {
   heroButton?: string;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Team | Philosophy | About | Blogs | Slug | AboutUs | Solutions | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Hero;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | ProductDesign | RD | Team | Philosophy | About | Blogs | Slug | AboutUs | Solutions | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Hero;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/helpers/queries.ts
 // Variable: HERO_QUERY
@@ -443,6 +465,30 @@ export type TEAM_QUERYResult = Array<{
     _type: "image";
   };
 }>;
+// Variable: RD_QUERY
+// Query: *[_type == "RD"] | order(_createdAt desc)
+export type RD_QUERYResult = Array<{
+  _id: string;
+  _type: "RD";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  location?: string;
+  hour?: string;
+}>;
+// Variable: PRODUCTDESIGN_QUERY
+// Query: *[_type == "productDesign"] | order(_createdAt desc)
+export type PRODUCTDESIGN_QUERYResult = Array<{
+  _id: string;
+  _type: "productDesign";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  location?: string;
+  hour?: string;
+}>;
 
 // Query TypeMap
 import "@sanity/client";
@@ -455,5 +501,7 @@ declare module "@sanity/client" {
     "*[_type == \"about\"] | order(name asc)": ABOUT_PAGE_QUERYResult;
     "*[_type == \"philosophy\"] | order(name asc)": PHILOSOPHY_QUERYResult;
     "*[_type == \"team\"] | order(_createdAt desc)": TEAM_QUERYResult;
+    "*[_type == \"RD\"] | order(_createdAt desc)": RD_QUERYResult;
+    "*[_type == \"productDesign\"] | order(_createdAt desc)": PRODUCTDESIGN_QUERYResult;
   }
 }

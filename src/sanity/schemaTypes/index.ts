@@ -7,6 +7,8 @@ import { blogTypes } from './blogTypes'
 import { aboutPageTypes } from './AboutPage/aboutType'
 import { philosophyTypes } from './AboutPage/philosophyTypes'
 import { teamTypes } from './AboutPage/teamTypes'
+import { RDTypes } from './CareersPage/RDTypes'
+import { productDesignTypes } from './CareersPage/productDesignTypes'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -17,5 +19,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     aboutPageTypes,
     philosophyTypes,
     teamTypes,
+    RDTypes,
+    productDesignTypes,
   ],
 }
