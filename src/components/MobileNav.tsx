@@ -76,7 +76,7 @@ function MobileNav() {
                     <h1 className='font-semibold text-2xl text-white'>FLOW</h1>
                   </Link>
                   <Button className='border border-white p-5 bg-transparent rounded-full hover:bg-[#BFF265] hover:text-black cursor-pointer'>
-                    Get in touch
+                    <Link href={'/contact-us'}>Get in touch</Link>
                   </Button>
                 </div>
               </SheetTitle>
