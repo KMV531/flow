@@ -2,6 +2,7 @@ import SectionTitle from '@/components/SectionTitle'
 import React from 'react'
 import { ABOUT_QUERYResult } from '../../../sanity.types'
 import { ImageCarousel } from '@/components/ImageCarousel'
+import { Check } from 'lucide-react'
 
 const AboutSection = ({ aboutUs }: { aboutUs: ABOUT_QUERYResult }) => {
   return (
@@ -20,10 +21,34 @@ const AboutSection = ({ aboutUs }: { aboutUs: ABOUT_QUERYResult }) => {
                 {about?.description}
               </p>
               <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 space-y-5'>
-                <p className='text-lg text-gray-400'>{about?.option1}</p>
-                <p className='text-lg text-gray-400'>{about?.option2}</p>
-                <p className='text-lg text-gray-400'>{about?.option3}</p>
-                <p className='text-lg text-gray-400'>{about?.option4}</p>
+                <div className='flex items-center justify-start space-x-2'>
+                  <Check
+                    size={25}
+                    className='rounded-full bg-[#BFF265] text-white'
+                  />
+                  <p className='text-lg text-gray-400'>{about?.option1}</p>
+                </div>
+                <div className='flex items-center justify-start space-x-2'>
+                  <Check
+                    size={25}
+                    className='rounded-full bg-[#BFF265] text-white'
+                  />
+                  <p className='text-lg text-gray-400'>{about?.option2}</p>
+                </div>
+                <div className='flex items-center justify-start space-x-2'>
+                  <Check
+                    size={25}
+                    className='rounded-full bg-[#BFF265] text-white'
+                  />
+                  <p className='text-lg text-gray-400'>{about?.option3}</p>
+                </div>
+                <div className='flex items-center justify-start space-x-2'>
+                  <Check
+                    size={25}
+                    className='rounded-full bg-[#BFF265] text-white'
+                  />
+                  <p className='text-lg text-gray-400'>{about?.option4}</p>
+                </div>
               </div>
             </div>
           ))}

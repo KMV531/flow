@@ -489,6 +489,59 @@ export type PRODUCTDESIGN_QUERYResult = Array<{
   location?: string;
   hour?: string;
 }>;
+// Variable: BLOG_BY_SLUG_QUERY
+// Query: *[_type == "blogs" && slug.current == $slug] | order(_createdAt desc)[0]
+export type BLOG_BY_SLUG_QUERYResult = {
+  _id: string;
+  _type: "blogs";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  overview?: string;
+  slug?: Slug;
+  mainImage?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  content?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+    _key: string;
+  }>;
+} | null;
 
 // Query TypeMap
 import "@sanity/client";
@@ -503,5 +556,6 @@ declare module "@sanity/client" {
     "*[_type == \"team\"] | order(_createdAt desc)": TEAM_QUERYResult;
     "*[_type == \"RD\"] | order(_createdAt desc)": RD_QUERYResult;
     "*[_type == \"productDesign\"] | order(_createdAt desc)": PRODUCTDESIGN_QUERYResult;
+    "*[_type == \"blogs\" && slug.current == $slug] | order(_createdAt desc)[0]": BLOG_BY_SLUG_QUERYResult;
   }
 }

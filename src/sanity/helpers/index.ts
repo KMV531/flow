@@ -2,6 +2,7 @@ import { sanityFetch } from '../lib/live'
 import {
   ABOUT_PAGE_QUERY,
   ABOUT_QUERY,
+  BLOG_BY_SLUG_QUERY,
   BLOG_QUERY,
   HERO_QUERY,
   PHILOSOPHY_QUERY,
@@ -115,6 +116,21 @@ export const getProductDesign = async () => {
     return ProductDesignData?.data || []
   } catch (error) {
     console.log('Error fetching Product Design data (index.ts):', error)
+    return []
+  }
+}
+
+export const getBlogSlug = async (slug: string) => {
+  try {
+    const blogSlugData = await sanityFetch({
+      query: BLOG_BY_SLUG_QUERY,
+      params: {
+        slug,
+      },
+    })
+    return blogSlugData?.data || []
+  } catch (error) {
+    console.log('Error fetching Blog slug data (index.ts):', error)
     return []
   }
 }

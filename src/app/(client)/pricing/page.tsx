@@ -3,9 +3,9 @@ import React from 'react'
 
 const PricingPage = () => {
   return (
-    <>
+    <div className='bg-white text-black'>
       <PricingPlan />
-    </>
+    </div>
   )
 }
 

@@ -31,3 +31,7 @@ export const RD_QUERY = defineQuery(`*[_type == "RD"] | order(_createdAt desc)`)
 export const PRODUCTDESIGN_QUERY = defineQuery(
   `*[_type == "productDesign"] | order(_createdAt desc)`
 )
+
+export const BLOG_BY_SLUG_QUERY = defineQuery(
+  `*[_type == "blogs" && slug.current == $slug] | order(name asc)[0]`
+)
