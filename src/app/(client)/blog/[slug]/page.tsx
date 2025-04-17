@@ -18,7 +18,9 @@ const SingleBlogPage = async ({
 
   return (
     <div className='container mx-auto pt-20 px-5 lg:px-0 pb-44'>
-      <Link href={'/blog'}>Back to blog</Link>
+      <Link href={'/blog'} className='pb-10 lg:pb-0'>
+        Back to blog
+      </Link>
       <div className='flex flex-col items-center justify-center space-y-4'>
         <div className='flex items-center justify-center space-x-2'>
           <p className='bg-white text-black p-2 text-xs rounded-xl'>
@@ -35,7 +37,7 @@ const SingleBlogPage = async ({
           <p>{new Date(blog?._createdAt).toISOString().split('T')[0]}</p>
         )}
       </div>
-      <div className='pt-5 flex items-center justify-between'>
+      <div className='pt-5 flex flex-col space-y-2 items-start justify-start lg:flex-row lg:items-center lg:justify-between'>
         <Author />
         <div className='flex items-center justify-center space-x-4'>
           <p>Share:</p>
@@ -58,7 +60,7 @@ const SingleBlogPage = async ({
       </div>
       <div className='px-0 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 leading-8 w-[70%] pb-28'>
         {blog?.content && <PortableText value={blog?.content} />}
-        <div className='mt-7 bg-white text-black p-5 rounded-xl flex items-start justify-start gap-x-5'>
+        <div className='mt-7 bg-white text-black p-5 rounded-xl flex flex-col space-y-2 lg:flex-row items-start justify-start gap-x-5'>
           <div>
             <Image
               src={'/711835e76796382411062147d6b2b3ade92b3ec9-960x958.jpg'}
@@ -69,9 +71,11 @@ const SingleBlogPage = async ({
             />
           </div>
           <div className='flex flex-col space-y-2'>
-            <h1 className='text-2xl font-semibold'>Leslie Alexander</h1>
-            <p>Solar energy service</p>
-            <h3 className='max-w-2xl'>
+            <h1 className='text-lg md:text-xl lg:text-2xl font-semibold'>
+              Leslie Alexander
+            </h1>
+            <p className='text-gray-700'>Solar energy service</p>
+            <h3 className='max-w-2xl text-sm md:text-lg lg:text-xl'>
               Leslie Alexander is a distinguished Solar Energy Specialist at the
               forefront of the renewable energy revolution. With a passion for
               sustainable technology and a commitment to addressing the global

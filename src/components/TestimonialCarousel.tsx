@@ -38,7 +38,7 @@ const testimonials = [
   {
     testimony:
       'FLOW transformed my energy use. Efficient, green tech, outstanding service!',
-    profile: '/711835e76796382411062147d6b2b3ade92b3ec9-960x958(1).jpg',
+    profile: '/711835e76796382411062147d6b2b3ade92b3ec9-960x958.jpg',
     name: 'Jenny Haliday',
     profession: 'Marketing Assistant',
   },
