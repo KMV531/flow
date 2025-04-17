@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Voltis',
+  title: 'Flow',
   description:
-    'Voltis is an innovative energy solutions platform built with Next.js, ShadCN, and Sanity. Discover cutting-edge, sustainable energy options with fast performance and dynamic content tailored to power businesses and homes.',
+    'Flow is a modern green energy company providing affordable, clean, and renewable power for homes and businesses. Make the switch today—save money, reduce your carbon footprint, and power a better future.',
 }
 
 export default function RootLayout({
@@ -27,6 +27,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
+      <head>
+        <link rel='icon' href='/favicon.png' type='image/png' />
+        {/* You can change the href to any path where your favicon is located */}
+        <meta
+          name='Flow'
+          content='Flow is a modern green energy company providing affordable, clean, and renewable power for homes and businesses. Make the switch today—save money, reduce your carbon footprint, and power a better future.'
+        />
+        {/* Add more metadata if needed */}
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
