@@ -12,7 +12,7 @@ const Footer = () => {
             <div>
               <Link href={'/'} className='flex items-center gap-2'>
                 <Image
-                  src={'/logo.png'}
+                  src={'/logo.PNG'}
                   alt='logo'
                   width={25}
                   height={25}
@@ -54,8 +54,9 @@ const Footer = () => {
                   />
                 </button>
                 <input
-                  className='border-none outline-none rounded-full pl-14 p-4 bg-[#416159] text-white font-semibold'
+                  className='border-none outline-none rounded-full pl-14 p-4 bg-[#416159] text-white font-semibold pointer-events-none'
                   placeholder='Follow us on Facebook'
+                  disabled
                 />
               </div>
               <div className='flex items-center relative'>
@@ -66,8 +67,9 @@ const Footer = () => {
                   />
                 </button>
                 <input
-                  className='border-none outline-none rounded-full pl-14 p-4 bg-[#416159] text-white font-semibold'
+                  className='border-none outline-none rounded-full pl-14 p-4 bg-[#416159] text-white font-semibold pointer-events-none'
                   placeholder='Follow us on Instagram'
+                  disabled
                 />
               </div>
               <div className='flex items-center relative'>
@@ -78,7 +80,7 @@ const Footer = () => {
                   />
                 </button>
                 <input
-                  className='border-none outline-none rounded-full pl-14 p-4 bg-[#416159] text-white font-semibold'
+                  className='border-none outline-none rounded-full pl-14 p-4 bg-[#416159] text-white font-semibold pointer-events-none'
                   placeholder='Follow us on LinkedIn'
                 />
               </div>

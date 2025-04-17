@@ -10,7 +10,7 @@ const ResultSection = () => {
           <SectionTitle name='Our results' />
         </div>
 
-        <h1 className='text-5xl text-black font-semibold my-8 pb-10 flex items-center justify-center'>
+        <h1 className='text-2xl md:text-4xl lg:text-5xl xl:text-6xl text-black font-semibold my-8 pb-10 flex items-center justify-center'>
           We are committed to a sustainable future
         </h1>
         <div className='flex flex-col items-start justify-start lg:items-center lg:justify-center md:flex-row gap-x-10 gap-7 mt-10'>
@@ -22,11 +22,13 @@ const ResultSection = () => {
               height={40}
               className='object-cover'
             />
-            <h1 className='text-3xl font-semibold text-black'>5,000 Mwh</h1>
-            <h3 className='text-gray-800 text-xl'>
+            <h1 className='text-base md:text-2xl lg:text-3xl xl:text-4xl font-semibold text-black'>
+              5,000 Mwh
+            </h1>
+            <h3 className='text-gray-800 text-base md:text-xl lg:text-2xl xl:text-3xl'>
               Renewable Energy Generated
             </h3>
-            <p className='text-sm text-gray-500 md:max-w-2xs lg:max-w-xl'>
+            <p className='text-sm md:text-lg lg:text-xl text-gray-500 md:max-w-2xs lg:max-w-xl'>
               Our commitment to sustainability shines through as we proudly
               announce the generation of 5,000 megawatt-hours of renewable
               energy, contributing to a greener and more environmentally
@@ -45,8 +47,12 @@ const ResultSection = () => {
                 />
               </div>
               <div className='flex flex-col gap-y-2'>
-                <h1 className='text-3xl font-semibold text-black'>10,000+</h1>
-                <h3 className='text-gray-800 text-xl'>Customers Served</h3>
+                <h1 className='text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold text-black'>
+                  10,000+
+                </h1>
+                <h3 className='text-gray-800 text-base md:text-xl lg:text-2xl xl:text-3xl'>
+                  Customers Served
+                </h3>
               </div>
             </div>
             <div className='flex items-start gap-x-7 bg-[#BFF265] rounded-lg p-6'>
@@ -60,8 +66,12 @@ const ResultSection = () => {
                 />
               </div>
               <div className='flex flex-col gap-y-2'>
-                <h1 className='text-3xl font-semibold text-black'>15%</h1>
-                <h3 className='text-gray-800 text-xl'>Avg. Energy Saved</h3>
+                <h1 className='text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold text-black'>
+                  15%
+                </h1>
+                <h3 className='text-gray-800 text-base md:text-xl lg:text-2xl xl:text-3xl'>
+                  Avg. Energy Saved
+                </h3>
               </div>
             </div>
           </div>

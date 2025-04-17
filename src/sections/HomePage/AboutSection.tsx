@@ -14,7 +14,7 @@ const AboutSection = ({ aboutUs }: { aboutUs: ABOUT_QUERYResult }) => {
         <div>
           {aboutUs?.map((about) => (
             <div key={about?._id} className='flex flex-col gap-y-10'>
-              <h1 className='text-5xl text-white font-semibold max-w-xl'>
+              <h1 className='text-2xl md:text-4xl lg:text-5xl xl:text-6xl text-white font-semibold max-w-xl'>
                 {about?.title}
               </h1>
               <p className='text-lg text-gray-400 max-w-2xl'>
@@ -26,28 +26,36 @@ const AboutSection = ({ aboutUs }: { aboutUs: ABOUT_QUERYResult }) => {
                     size={25}
                     className='rounded-full bg-[#BFF265] text-white'
                   />
-                  <p className='text-lg text-gray-400'>{about?.option1}</p>
+                  <p className='text-sm md:text-lg lg:text-xl xl:text-2xl text-gray-400'>
+                    {about?.option1}
+                  </p>
                 </div>
                 <div className='flex items-center justify-start space-x-2'>
                   <Check
                     size={25}
                     className='rounded-full bg-[#BFF265] text-white'
                   />
-                  <p className='text-lg text-gray-400'>{about?.option2}</p>
+                  <p className='text-sm md:text-lg lg:text-xl xl:text-2xl text-gray-400'>
+                    {about?.option2}
+                  </p>
                 </div>
                 <div className='flex items-center justify-start space-x-2'>
                   <Check
                     size={25}
                     className='rounded-full bg-[#BFF265] text-white'
                   />
-                  <p className='text-lg text-gray-400'>{about?.option3}</p>
+                  <p className='text-sm md:text-lg lg:text-xl xl:text-2xl text-gray-400'>
+                    {about?.option3}
+                  </p>
                 </div>
                 <div className='flex items-center justify-start space-x-2'>
                   <Check
                     size={25}
                     className='rounded-full bg-[#BFF265] text-white'
                   />
-                  <p className='text-lg text-gray-400'>{about?.option4}</p>
+                  <p className='text-sm md:text-lg lg:text-xl xl:text-2xl text-gray-400'>
+                    {about?.option4}
+                  </p>
                 </div>
               </div>
             </div>

@@ -31,7 +31,7 @@ const Header = () => {
           <div className='flex items-center justify-center gap-10'>
             <Link href={'/'} className='flex items-center gap-2'>
               <Image
-                src={'/logo.png'}
+                src={'/logo.PNG'}
                 alt='logo'
                 width={25}
                 height={25}

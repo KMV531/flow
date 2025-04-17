@@ -15,7 +15,7 @@ const SolutionsSection = ({
       <div className='container mx-auto pb-36 px-10 md:px-0'>
         <div className='flex flex-col justify-between gap-y-5'>
           <SectionTitle name='Solutions' />
-          <h1 className='text-4xl text-black font-semibold mb-7'>
+          <h1 className='text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-black font-semibold mb-7'>
             Key to clean future
           </h1>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10'>
@@ -29,13 +29,15 @@ const SolutionsSection = ({
                     height={50}
                   />
                 )}
-                <h1 className='text-3xl font-semibold text-black'>
+                <h1 className='text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold text-black'>
                   {solution?.title}
                 </h1>
-                <p className='text-lg text-gray-500'>{solution?.description}</p>
+                <p className='text-sm md:text-lg lg:text-xl xl:text-2xl text-gray-500'>
+                  {solution?.description}
+                </p>
                 <Link
                   href={'/about-us'}
-                  className='text-xl text-gray-700 w-max'
+                  className='text-base md:text-xl lg:text-2xl xl:text-3xl text-gray-700 w-max'
                 >
                   Read More
                 </Link>

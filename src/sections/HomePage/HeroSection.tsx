@@ -12,12 +12,12 @@ const HeroSection = ({ hero }: { hero: HERO_QUERYResult }) => {
           className='flex flex-col px-5 lg:px-0 gap-5 lg:flex-row lg:items-center lg:justify-center lg:gap-5'
         >
           <div>
-            <h1 className='lg:text-7xl text-5xl font-semibold max-w-xl'>
+            <h1 className='text-2xl md:text-4xl lg:text-7xl font-semibold max-w-xl'>
               {heroData?.title}
             </h1>
           </div>
           <div className='flex flex-col gap-y-10'>
-            <p className='text-lg max-w-2xl text-white'>
+            <p className='text-sm md:text-base lg:text-lg xl:text-xl max-w-2xl text-white'>
               {heroData?.heroDescription}
             </p>
             <Link

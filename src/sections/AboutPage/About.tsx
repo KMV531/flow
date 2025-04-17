@@ -14,12 +14,12 @@ const About = ({ aboutPage }: { aboutPage: ABOUT_PAGE_QUERYResult }) => {
         >
           <div className='flex flex-col px-5 lg:px-0 gap-5 lg:flex-row lg:items-center lg:justify-center lg:gap-x-20'>
             <div>
-              <h1 className='lg:text-7xl text-5xl font-semibold max-w-xl'>
+              <h1 className='text-xl md:text-3xl lg:text-5xl xl:text-7xl font-semibold max-w-xl'>
                 {about?.title}
               </h1>
             </div>
             <div className='flex flex-col gap-y-10'>
-              <p className='text-lg max-w-2xl text-black'>
+              <p className='text-sm md:text-base lg:text-lg xl:text-xl max-w-2xl text-black'>
                 {about?.aboutDescription}
               </p>
               <Link
@@ -30,7 +30,7 @@ const About = ({ aboutPage }: { aboutPage: ABOUT_PAGE_QUERYResult }) => {
               </Link>
             </div>
           </div>
-          <div className='w-full h-full pb-44'>
+          <div className='w-full h-full pb-44 px-5 lg:px-0'>
             {about?.mainImage && (
               <Image
                 src={urlFor(about?.mainImage).url()}

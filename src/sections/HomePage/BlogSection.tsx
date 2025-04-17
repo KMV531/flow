@@ -9,7 +9,9 @@ const BlogSection = ({ blogs }: { blogs: BLOG_QUERYResult }) => {
   return (
     <section className='container mx-auto mt-44 px-5 mb-[10rem] lg:px-0'>
       <div className='flex items-center justify-between mb-20'>
-        <h1 className='text-4xl font-semibold'>Blog</h1>
+        <h1 className='text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold'>
+          Blog
+        </h1>
         <Link
           href={'/blog'}
           className='border border-white py-3 px-5 bg-transparent rounded-full '
@@ -34,8 +36,10 @@ const BlogSection = ({ blogs }: { blogs: BLOG_QUERYResult }) => {
                 />
               )}
             </Link>
-            <h1 className='text-semibold text-2xl'>{blog?.title}</h1>
-            <p className='text-gray-400 text-lg line-clamp-1 max-w-2xl'>
+            <h1 className='text-semibold text-sm md:text-xl lg:text-2xl xl:text-3xl line-clamp-1'>
+              {blog?.title}
+            </h1>
+            <p className='text-gray-400 text-sm md:text-base lg:text-lg xl:text-xl line-clamp-2 max-w-2xl'>
               {blog?.overview}
             </p>
             <Author />

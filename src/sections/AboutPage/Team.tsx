@@ -26,7 +26,7 @@ const Team = ({ team }: { team: TEAM_QUERYResult }) => {
               )}
               <div className='px-4'>
                 <div className='bg-[#BFF265] p-3 flex items-center justify-between absolute bottom-4 w-3/4 rounded-xl'>
-                  <h1 className='text-xl font-bold'>{worker?.name}</h1>
+                  <h1 className='text-lg font-bold'>{worker?.name}</h1>
                   <p>{worker?.position}</p>
                   <Link href={'/'}>
                     <FaLinkedin size={30} />

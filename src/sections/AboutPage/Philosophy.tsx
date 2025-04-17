@@ -10,7 +10,7 @@ const Philosophy = ({
   return (
     <>
       <div className='container mx-auto px-5 lg:px-0 pb-32'>
-        <h1 className='text-xl md:text-3xl lg:text-5xl pb-14'>
+        <h1 className='text-2xl md:text-3xl lg:text-5xl pb-14'>
           Our Work Philosophy
         </h1>
         <div className='flex flex-col space-y-4 items-center justify-center'>
@@ -21,7 +21,9 @@ const Philosophy = ({
             >
               <div>
                 <p>{philosophy?.badge}</p>
-                <h1 className='text-4xl'>{philosophy?.title}</h1>
+                <h1 className='text-2xl md:text-3xl lg:text-4xl xl:text-5xl'>
+                  {philosophy?.title}
+                </h1>
               </div>
               <div>
                 <p className='max-w-2xl'>{philosophy?.philosophyDescription}</p>

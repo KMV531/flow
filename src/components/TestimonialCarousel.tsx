@@ -74,7 +74,9 @@ export function TestimonialCarousel() {
             <div className='p-1'>
               <Card className='bg-[#BFF265]'>
                 <CardContent className='flex flex-col aspect-square items-start justify-between p-6'>
-                  <p className='text-sm'>&quot;{testimonial.testimony}&quot;</p>
+                  <p className='text-sm md:text-lg lg:text-xl'>
+                    &quot;{testimonial.testimony}&quot;
+                  </p>
                   <div className='flex items-start justify-start gap-x-5'>
                     <Image
                       src={testimonial.profile}
@@ -85,7 +87,9 @@ export function TestimonialCarousel() {
                     />
                     <div className='flex flex-col gap-y-1'>
                       <h1 className='font-semibold'>{testimonial.name}</h1>
-                      <p className='text-sm'>{testimonial.profession}</p>
+                      <p className='text-sm md:text-lg lg:text-xl'>
+                        {testimonial.profession}
+                      </p>
                     </div>
                   </div>
                 </CardContent>
