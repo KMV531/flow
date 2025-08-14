@@ -67,7 +67,7 @@
 
 1. Clone repository:
    ```bash
-   git clone https://github.com/yourusername/cartify.git
+   git clone https://github.com/KMV531/flow.git
    
 2. Install dependencies:
    ```bash
